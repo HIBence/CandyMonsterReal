@@ -50,7 +50,7 @@ public class Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(currentQuestionNum>=4 && monsterAgent.remainingDistance == 0)
+        if(monster.reachedEnd())
         {
             GameOverUI.SetActive(true);
         }

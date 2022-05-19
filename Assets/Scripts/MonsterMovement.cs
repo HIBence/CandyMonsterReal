@@ -36,6 +36,14 @@ public class MonsterMovement : MonoBehaviour
         
     }
 
+    public bool reachedEnd()
+    {
+        if (currentQuestionNum + 1 == QuestionPlatforms.Length && Monster.remainingDistance == 0)
+        {
+            return true;
+        }
+        else return false;
+    }
     //IEnumerator Sequence()
     //{
 
