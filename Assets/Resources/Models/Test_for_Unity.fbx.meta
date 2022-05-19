@@ -1,0 +1,970 @@
+fileFormatVersion: 2
+guid: cdca9327c17a0164f8c722679849ab5f
+ModelImporter:
+  serializedVersion: 21202
+  internalIDToNameTable: []
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 1
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    nodeNameCollisionStrategy: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    optimizeBones: 1
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: Test_for_Unity(Clone)
+      parentName: 
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Root
+      parentName: Test_for_Unity(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Rig_Leg_grp
+      parentName: Test_for_Unity(Clone)
+      position: {x: 1.08770485e-33, y: 0, z: -1.7763568e-17}
+      rotation: {x: 6.123234e-17, y: 1, z: -6.123234e-17, w: -6.123234e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      parentName: Ultimate_Walker_v1_0_1:Rig_Leg_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_reverseFoot_rig_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: 5.3959163e-19, y: 0.0043049753, z: 0.0046595586}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_heel_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_reverseFoot_rig_grp
+      position: {x: -0.005830161, y: 1.539e-11, z: -0.0025085055}
+      rotation: {x: -0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_toe_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_heel_rev_rig_jnt
+      position: {x: -0.011719712, y: 0, z: 3.330669e-18}
+      rotation: {x: 0.06386444, y: -0.70421684, z: 0.06386444, w: 0.70421684}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_toe_rev_rig_jnt
+      position: {x: 2.220446e-18, y: -1.4536118e-18, z: -0.0055929725}
+      rotation: {x: 0.6938939, y: 0.13605608, z: -0.6938939, w: -0.13605608}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ball_rev_rig_jnt
+      position: {x: 0.0039888793, y: -0.0044379593, z: 3.330669e-18}
+      rotation: {x: 0, y: 0, z: -0.40713918, w: 0.91336614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf__ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_toe_rev_rig_jnt
+      position: {x: -0, y: -1.4536118e-18, z: -0.0055929725}
+      rotation: {x: 0.7071068, y: 4.3297806e-17, z: -0.7071068, w: 4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf__ik_jnt
+      position: {x: -1.110223e-18, y: 2.0679515e-27, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_toe_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ball_ik_jnt
+      position: {x: -0.0055929725, y: -1.4536118e-18, z: 1.110223e-18}
+      rotation: {x: 0.7071068, y: 4.3297806e-17, z: -0.7071068, w: 4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legFK_Grp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.000026654474, y: 0.03483243, z: 0.0036845196}
+      rotation: {x: 0.4372544, y: -0.35677403, z: -0.57919323, w: 0.5882653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLeg_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_legFK_Grp
+      position: {x: 0.0072869947, y: 0.00035533216, z: 0.005830161}
+      rotation: {x: 0, y: 0, z: 0.9999974, w: 0.0022921166}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_upLeg_fk_jnt
+      position: {x: -0.009886131, y: 1.3433698e-16, z: 1.110223e-18}
+      rotation: {x: 0, y: 0, z: -0.039097756, w: 0.9992354}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_jnt
+      position: {x: -0.0087961685, y: 3.330669e-18, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.3941899, w: 0.919029}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_jnt
+      position: {x: -0.00596713, y: -5.551115e-19, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.40713918, w: 0.91336614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_toe_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_jnt
+      position: {x: -0.0055929725, y: -5.221949e-19, z: 2.220446e-18}
+      rotation: {x: 0.7071068, y: -4.3297806e-17, z: -0.7071068, w: -4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0018507609, y: 0.0038574508, z: 0.006458569}
+      rotation: {x: -0.561331, y: -0.058195, z: 0.8255304, w: -0.0045227227}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_ctrl_frzGrp
+      position: {x: 2.220446e-18, y: 5.551115e-19, z: 0}
+      rotation: {x: -0, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ball_fk_ctrl_frzGrp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: -0, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0036488315, y: 0.008495989, z: 0.0031634904}
+      rotation: {x: -0.48900723, y: -0.2816932, z: 0.7558529, w: 0.33197486}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_ctrl_frzGrp
+      position: {x: -1.10439845e-10, y: 1.1609864e-10, z: 1.6653345e-18}
+      rotation: {x: -1.110223e-16, y: -1.540744e-32, z: 2.7755576e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankle_fk_ctrl_frzGrp
+      position: {x: -0, y: 5.551115e-19, z: -1.110223e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.004033096, y: 0.017165737, z: 0.0045988886}
+      rotation: {x: -0.33837122, y: -0.4516459, z: 0.5637896, w: 0.6030441}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_ctrl_frzGrp
+      position: {x: 7.8641534e-14, y: 6.1633336e-15, z: -2.220446e-18}
+      rotation: {x: 0, y: 7.70372e-34, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_fk_ctrl_frzGrp
+      position: {x: 2.220446e-18, y: -1.3877787e-19, z: -1.110223e-18}
+      rotation: {x: 1.2325952e-32, y: -1.540744e-33, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLegupJntFkCtrl_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0047528124, y: 0.026984503, z: 0.0054985858}
+      rotation: {x: -0.35577086, y: -0.438071, z: 0.5869362, w: 0.5805401}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLeg_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0047528124, y: 0.026984503, z: 0.0054985858}
+      rotation: {x: -0.35577086, y: -0.438071, z: 0.5869362, w: 0.5805401}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLeg_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_upLeg_fk_ctrl_frzGrp
+      position: {x: -0, y: 0, z: -1.110223e-18}
+      rotation: {x: 5.551115e-17, y: 4.414048e-33, z: 5.551115e-17, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legIK_Grp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.000026654474, y: 0.03483243, z: 0.0036845196}
+      rotation: {x: 0.4372544, y: -0.35677403, z: -0.57919323, w: 0.5882653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLeg_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_legIK_Grp
+      position: {x: 0.0072869947, y: 0.00035533216, z: 0.005830161}
+      rotation: {x: -0.13681248, y: -0.1781565, z: 0.91555095, w: -0.33363014}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_upLeg_ik_jnt
+      position: {x: -0.009886131, y: 1.3433698e-16, z: 1.110223e-18}
+      rotation: {x: -1.1344022e-15, y: -2.0965512e-15, z: -0.52278, w: 0.8524677}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_ik_jnt
+      position: {x: -0.0087961685, y: 3.330669e-18, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.3941899, w: 0.919029}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_heel_ik_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 1.539e-11, z: -0.0025085055}
+      rotation: {x: -1.2246469e-16, y: 0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_heel_ik_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_heel_ik_ctrl_frzGrp
+      position: {x: -0, y: 0.0043049753, z: 0.0046595586}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_leg_ikHandle
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.011198168, z: 0.0073946067}
+      rotation: {x: 0.28025624, y: -1.2840533e-32, z: 2.220446e-16, w: 0.95992523}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_foot_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.006085314, z: 0.007156211}
+      rotation: {x: 0.28025624, y: -5.551115e-17, z: 1.6653345e-16, w: 0.95992523}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_pv_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.012843261, z: 0.010196079}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_line_loc
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_pv_ctrl_frzGrp
+      position: {x: 0.00029287062, y: 0.006208299, z: 0.0011496085}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:abRTLine_walker_lf_knee_line_loc
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_line_loc
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legPvCtrlGrp_space_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_pv_ctrl_frzGrp
+      position: {x: 0.005830161, y: -0.008538285, z: -0.00553652}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_pv_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_legPvCtrlGrp_space_grp
+      position: {x: -0.005830161, y: 0.012843261, z: 0.010196079}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_pv_ctrl_annLoc
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_pv_ctrl
+      position: {x: -0, y: 0, z: -2.220446e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legStrDist_dist
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legStrDist_dist_sp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0047528124, y: 0.026984503, z: 0.0054985858}
+      rotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legStrDist_dist_ep
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.011198168, z: 0.0073946067}
+      rotation: {x: 0.6458474, y: 0.28789088, z: -0.6458474, w: -0.28789088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLegPvCtrl_dist
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLegPvCtrl_dist_sp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0047528124, y: 0.026984503, z: 0.0054985858}
+      rotation: {x: -0.5, y: -0.5, z: 0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLegPvCtrl_dist_ep
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.017148238, z: 0.014855637}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legPvIkCtrl_dist
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legPvIkCtrl_dist_sp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.017148238, z: 0.014855637}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legPvIkCtrl_dist_ep
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.005830161, y: 0.011198168, z: 0.0073946067}
+      rotation: {x: 0.6458474, y: 0.28789088, z: -0.6458474, w: -0.28789088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_legIkCtrl_space_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_UpLeg_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_leg_rig_grp
+      position: {x: -0.0047528124, y: 0.026984503, z: 0.0054985858}
+      rotation: {x: 0.65619516, y: 0.30686054, z: -0.6051124, w: -0.33027813}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_Knee_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_UpLeg_jnt
+      position: {x: -0.009886131, y: 1.3343493e-16, z: 2.220446e-18}
+      rotation: {x: 0, y: 0, z: -0.52278, w: 0.8524677}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_Ankle_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_Knee_jnt
+      position: {x: -0.0087961685, y: 2.3176645e-10, z: 1.110223e-18}
+      rotation: {x: 0.029151315, y: -0.027002193, z: 0.30907798, w: 0.9502062}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_Ball_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankleBallReader_Ankle_jnt
+      position: {x: -0.00596713, y: -1.5722534e-10, z: -1.110223e-18}
+      rotation: {x: 0, y: 0, z: 0.5752744, w: 0.8179605}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_charVars
+      parentName: Ultimate_Walker_v1_0_1:Rig_Leg_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lfLegIkCtrl_space_switch_grp
+      parentName: Ultimate_Walker_v1_0_1:Rig_Leg_grp
+      position: {x: -0.005830161, y: 0.0043049753, z: 0.0021510532}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      parentName: Ultimate_Walker_v1_0_1:Rig_Leg_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_reverseFoot_rig_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 5.517315e-19, y: 0.0015487315, z: -0.0045052296}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_heel_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_reverseFoot_rig_grp
+      position: {x: 0.005830161, y: 1.539e-11, z: -0.0025085055}
+      rotation: {x: -0, y: 0.70710677, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_toe_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_heel_rev_rig_jnt
+      position: {x: -0.011719716, y: -7.285848e-19, z: 3.9968027e-17}
+      rotation: {x: 0.7051452, y: 0.052633986, z: 0.7051451, w: -0.052633993}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_toe_rev_rig_jnt
+      position: {x: 1.110223e-18, y: 8.5485813e-19, z: 0.0055929795}
+      rotation: {x: 0.6944261, y: 0.13331315, z: -0.6944261, w: -0.13331315}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_rev_rig_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ball_rev_rig_jnt
+      position: {x: -0.0039888746, y: 0.00443796, z: 0}
+      rotation: {x: 0, y: 0, z: -0.40713918, w: 0.91336614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt__ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_toe_rev_rig_jnt
+      position: {x: 1.110223e-18, y: 8.5485813e-19, z: 0.0055929795}
+      rotation: {x: 0.7071068, y: -4.3297806e-17, z: -0.7071068, w: -4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt__ik_jnt
+      position: {x: 5.551115e-19, y: -2.0679515e-27, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_toe_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ball_ik_jnt
+      position: {x: 0.0055929795, y: 8.5485813e-19, z: 2.220446e-18}
+      rotation: {x: 0.7071068, y: -4.3297806e-17, z: -0.7071068, w: -4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legFK_Grp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: -0.000026654474, y: 0.03483243, z: 0.0036845196}
+      rotation: {x: 0.4372544, y: -0.35677403, z: -0.57919323, w: 0.5882653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLeg_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_legFK_Grp
+      position: {x: 0.0072869617, y: 0.00035533195, z: -0.00583016}
+      rotation: {x: 0, y: 0, z: -0.0022921166, w: 0.9999974}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_upLeg_fk_jnt
+      position: {x: 0.0098862, y: 2.236124e-10, z: 4.440892e-18}
+      rotation: {x: 0, y: 0, z: -0.039097756, w: 0.9992354}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_jnt
+      position: {x: 0.008796132, y: -0.0000000026256022, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.3941899, w: 0.919029}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_jnt
+      position: {x: 0.0059671276, y: -0.000000003750602, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.40713918, w: 0.91336614}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_toe_fk_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_jnt
+      position: {x: 0.0055929795, y: 3.824761e-20, z: 1.110223e-18}
+      rotation: {x: 0.7071068, y: -2.0030707e-16, z: -0.7071068, w: -2.0030707e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.008949786, y: 0.005037021, z: 0.0022253818}
+      rotation: {x: 0.058195, y: -0.561331, z: 0.0045227227, w: 0.8255304}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_ctrl_frzGrp
+      position: {x: -0, y: 5.551115e-19, z: -1.110223e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ball_fk_ctrl_frzGrp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.0071517173, y: 0.00967556, z: -0.0010696928}
+      rotation: {x: 0.2816932, y: -0.48900723, z: -0.33197486, w: 0.7558529}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_ctrl_frzGrp
+      position: {x: -1.0942629e-10, y: 1.1503316e-10, z: 1.110223e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankle_fk_ctrl_frzGrp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.006767455, y: 0.018345272, z: 0.00036570162}
+      rotation: {x: 0.4516459, y: -0.33837122, z: -0.6030441, w: 0.5637896}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_ctrl_frzGrp
+      position: {x: -1.6752368e-10, y: -1.3129727e-11, z: 1.110223e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_fk_ctrl_frzGrp
+      position: {x: -0, y: 1.3877787e-19, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLegupJntFkCtrl_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.006047734, y: 0.028164105, z: 0.001265405}
+      rotation: {x: 0.438071, y: -0.35577086, z: -0.5805401, w: 0.5869362}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLeg_fk_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.006047734, y: 0.028164105, z: 0.001265405}
+      rotation: {x: 0.438071, y: -0.35577086, z: -0.5805401, w: 0.5869362}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLeg_fk_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_upLeg_fk_ctrl_frzGrp
+      position: {x: -0, y: -6.938894e-20, z: 0}
+      rotation: {x: 1.110223e-16, y: -1.110223e-16, z: 1.6543612e-24, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legIK_Grp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: -0.000026654474, y: 0.03483243, z: 0.0036845196}
+      rotation: {x: 0.4372544, y: -0.35677403, z: -0.57919323, w: 0.5882653}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLeg_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_legIK_Grp
+      position: {x: 0.0072869617, y: 0.00035533195, z: -0.00583016}
+      rotation: {x: 0.19536681, y: -0.03489178, z: -0.04550386, w: 0.9790525}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_upLeg_ik_jnt
+      position: {x: 0.0098862, y: 2.236124e-10, z: 4.440892e-18}
+      rotation: {x: 9.8570945e-18, y: -3.505901e-16, z: -0.000024766394, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_ik_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_ik_jnt
+      position: {x: 0.008796132, y: -0.0000000026256022, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.3941899, w: 0.919029}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_heel_ik_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.005830161, y: 1.539e-11, z: -0.0025085055}
+      rotation: {x: -6.123234e-17, y: 1.6081226e-16, z: 2.8327693e-16, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_heel_ik_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_heel_ik_ctrl_frzGrp
+      position: {x: -0, y: 0.0015487315, z: -0.0045052296}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_leg_ikHandle
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.00583016, y: 0.00822268, z: -0.0020327815}
+      rotation: {x: 0.26111108, y: 4.0996855e-17, z: -7.57812e-17, w: 0.9653088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_foot_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.0058466415, y: 0.0046149534, z: -0.0018178349}
+      rotation: {x: 0.26111108, y: 2.7755576e-16, z: 1.110223e-16, w: 0.9653088}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_pv_ctrl_frzGrp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.00583016, y: 0.012843223, z: 0.010196147}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_line_loc
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_pv_ctrl_frzGrp
+      position: {x: 0.000111158246, y: 0.0055677155, z: -0.010543619}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:abRTLine_walker_rt_knee_line_loc
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_line_loc
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legPvCtrlGrp_space_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_pv_ctrl_frzGrp
+      position: {x: -0.00583016, y: -0.0112944925, z: -0.014701377}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_pv_ctrl
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_legPvCtrlGrp_space_grp
+      position: {x: 0.00583016, y: 0.012843223, z: 0.010196147}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_pv_ctrl_annLoc
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_pv_ctrl
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legStrDist_dist
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legStrDist_dist_sp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.006047734, y: 0.028164105, z: 0.001265405}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legStrDist_dist_ep
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.00583016, y: 0.00822268, z: -0.0020327815}
+      rotation: {x: 0.28789088, y: -0.6458474, z: -0.28789088, w: 0.6458474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLegPvCtrl_dist
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLegPvCtrl_dist_sp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.006047734, y: 0.028164105, z: 0.001265405}
+      rotation: {x: 0.5, y: -0.5, z: -0.5, w: 0.5}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLegPvCtrl_dist_ep
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.00583016, y: 0.014391955, z: 0.005690918}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legPvIkCtrl_dist
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legPvIkCtrl_dist_sp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.00583016, y: 0.014391955, z: 0.005690918}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legPvIkCtrl_dist_ep
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.00583016, y: 0.00822268, z: -0.0020327815}
+      rotation: {x: 0.28789088, y: -0.6458474, z: -0.28789088, w: 0.6458474}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_legIkCtrl_space_grp
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_UpLeg_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_leg_rig_grp
+      position: {x: 0.006047734, y: 0.028164105, z: 0.001265405}
+      rotation: {x: -0.5390481, y: 0.46308452, z: 0.53938377, w: -0.45171362}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_Knee_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_UpLeg_jnt
+      position: {x: 0.0098862, y: 2.236124e-10, z: 5.5511148e-18}
+      rotation: {x: 0, y: 0, z: -0.000024766394, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_Ankle_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_Knee_jnt
+      position: {x: 0.008796132, y: 0.0000000052571116, z: 2.220446e-18}
+      rotation: {x: -0.0048937043, y: 0.006384101, z: 0.1828015, w: 0.9831169}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_Ball_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankleBallReader_Ankle_jnt
+      position: {x: 0.0059671276, y: -0.000000009098085, z: -1.110223e-18}
+      rotation: {x: 0, y: 0, z: 0.5720378, w: 0.82022727}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rtLegIkCtrl_space_switch_grp
+      parentName: Ultimate_Walker_v1_0_1:Rig_Leg_grp
+      position: {x: 0.005830161, y: 0.0015487315, z: -0.007013736}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Skeleton_grp
+      parentName: Test_for_Unity(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_hip_jnt
+      parentName: Ultimate_Walker_v1_0_1:Skeleton_grp
+      position: {x: 0.000026654474, y: 0.028365925, z: -0.0036845196}
+      rotation: {x: 0.49885264, y: -0.50114477, z: -0.49885264, w: 0.5011448}
+      scale: {x: 1.0000004, y: 1.0000002, z: 1.0000002}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_upLeg_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_hip_jnt
+      position: {x: 0.0072869617, y: 0.00035533195, z: -0.00583016}
+      rotation: {x: -0.000000029802322, y: 0.000000029802322, z: 0.0022921413, w: -0.99999744}
+      scale: {x: 1.0000001, y: 1, z: 1.0000001}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_knee_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_upLeg_jnt
+      position: {x: 0.0098862, y: 2.236124e-10, z: 4.440892e-18}
+      rotation: {x: -0.000000030873597, y: -0.000000031061127, z: -0.039096907, w: 0.9992354}
+      scale: {x: 1.0000004, y: 1.0000001, z: 1.0000001}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ankle_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_knee_jnt
+      position: {x: 0.008796132, y: -0.0000000026256022, z: 0}
+      rotation: {x: -0.0000000534519, y: 0.0000000026162483, z: -0.3941891, w: -0.91902936}
+      scale: {x: 1, y: 0.9999998, z: 1.0000001}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_ball_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ankle_jnt
+      position: {x: 0.0059671276, y: -0.000000003750602, z: -1.110223e-18}
+      rotation: {x: 0, y: 0, z: 0.5720378, w: 0.82022727}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_rt_toe_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_rt_ball_jnt
+      position: {x: 0.0055929795, y: -1.3824481e-18, z: 0}
+      rotation: {x: 0.7071068, y: -4.3297806e-17, z: -0.7071068, w: -4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_upLeg_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_hip_jnt
+      position: {x: 0.0072869947, y: 0.00035533216, z: 0.005830161}
+      rotation: {x: -0.000000044703484, y: -0.000000029802322, z: 0.9999974, w: 0.0022921562}
+      scale: {x: 1.0000002, y: 1.0000005, z: 1.0000005}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_knee_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_upLeg_jnt
+      position: {x: -0.009886131, y: 1.3412882e-16, z: 2.220446e-18}
+      rotation: {x: -0.000000027977501, y: -0.000000043568345, z: -0.03909776, w: 0.99923545}
+      scale: {x: 1.000001, y: 1.0000005, z: 1.0000008}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ankle_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_knee_jnt
+      position: {x: -0.0087961685, y: 3.469447e-18, z: -1.110223e-18}
+      rotation: {x: -0.000000038965307, y: -0.000000022840206, z: -0.39418992, w: -0.91902906}
+      scale: {x: 1, y: 1.0000001, z: 1.0000001}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_ball_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ankle_jnt
+      position: {x: -0.00596713, y: -2.220446e-18, z: -2.220446e-18}
+      rotation: {x: 0, y: 0, z: 0.5752744, w: 0.8179605}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:walker_lf_toe_jnt
+      parentName: Ultimate_Walker_v1_0_1:walker_lf_ball_jnt
+      position: {x: -0.0055929725, y: -5.221949e-19, z: 1.110223e-18}
+      rotation: {x: 0.7071068, y: 4.3297806e-17, z: -0.7071068, w: 4.3297806e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Body_Rig_Grp
+      parentName: Test_for_Unity(Clone)
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Mesh_Flex_Grp
+      parentName: Ultimate_Walker_v1_0_1:Body_Rig_Grp
+      position: {x: -0.00072800595, y: 0.0248964, z: -0.0028413034}
+      rotation: {x: -0.037952032, y: 0.1868172, z: -0.044348124, w: 0.98065907}
+      scale: {x: 0.98217356, y: 1.01815, z: 0.98217356}
+    - name: Ultimate_Walker_v1_0_1:Extras_Grp
+      parentName: Ultimate_Walker_v1_0_1:Mesh_Flex_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:ballTypes_olcek
+      parentName: Ultimate_Walker_v1_0_1:Extras_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Loc_kuyruk
+      parentName: Ultimate_Walker_v1_0_1:Mesh_Flex_Grp
+      position: {x: -0, y: 0.01, z: 0.009777889}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Mesh_body_Grp
+      parentName: Ultimate_Walker_v1_0_1:Mesh_Flex_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:simple_body
+      parentName: Ultimate_Walker_v1_0_1:Mesh_body_Grp
+      position: {x: -0, y: 0.01, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:simple_body_line
+      parentName: Ultimate_Walker_v1_0_1:Mesh_body_Grp
+      position: {x: -0, y: 0.01, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 0.59933686, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CNT_Grp
+      parentName: Ultimate_Walker_v1_0_1:Body_Rig_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Top_Grp
+      parentName: Ultimate_Walker_v1_0_1:CNT_Grp
+      position: {x: 0.00072800595, y: 0.044760115, z: -0.004661423}
+      rotation: {x: -0.037952032, y: 0.1868172, z: -0.044348124, w: 0.98065907}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Top
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Top_Grp
+      position: {x: -0, y: 0.000363, z: -1.110223e-18}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:locator2
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Top
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:ikHandle1
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Top
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Bottom_Grp
+      parentName: Ultimate_Walker_v1_0_1:CNT_Grp
+      position: {x: -0.00072800595, y: 0.0248964, z: -0.0028413034}
+      rotation: {x: -0.037952032, y: 0.1868172, z: -0.044348124, w: 0.98065907}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Bottom
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Bottom_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Jnt_main
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Bottom
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:joint2
+      parentName: Ultimate_Walker_v1_0_1:Jnt_main
+      position: {x: -0, y: 0.020363, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:locator1
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Bottom
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Main_Grp
+      parentName: Ultimate_Walker_v1_0_1:CNT_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:CTRL_Main
+      parentName: Ultimate_Walker_v1_0_1:CTRL_Main_Grp
+      position: {x: -0, y: 0.034828257, z: -0.0037513634}
+      rotation: {x: -0.037952032, y: 0.1868172, z: -0.044348124, w: 0.98065907}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:JNT_Grp
+      parentName: Ultimate_Walker_v1_0_1:CNT_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:JNT_kuyruk_01
+      parentName: Ultimate_Walker_v1_0_1:JNT_Grp
+      position: {x: -0, y: 0.01, z: 0.01}
+      rotation: {x: -0, y: 0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:JNT_kuyruk_02
+      parentName: Ultimate_Walker_v1_0_1:JNT_kuyruk_01
+      position: {x: -0.00725577, y: 2.220446e-18, z: 1.2888836e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:JNT_kuyruk_03
+      parentName: Ultimate_Walker_v1_0_1:JNT_kuyruk_02
+      position: {x: -0.009356821, y: 2.220446e-18, z: 1.6621053e-17}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:JNT_kuyruk_04
+      parentName: Ultimate_Walker_v1_0_1:JNT_kuyruk_03
+      position: {x: -0.005240476, y: -2.220446e-18, z: 9.308956e-18}
+      rotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:JNT_kuyruk_05
+      parentName: Ultimate_Walker_v1_0_1:JNT_kuyruk_04
+      position: {x: 3.2133982e-33, y: 0, z: 0.008146932}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:Mesh_Grp
+      parentName: Test_for_Unity(Clone)
+      position: {x: -0.005830159, y: 0.013207235, z: 0.0012797071}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:leg_binded_grp
+      parentName: Ultimate_Walker_v1_0_1:Mesh_Grp
+      position: {x: 0.005830159, y: -0.013207235, z: -0.0012797071}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_leg_Grp
+      parentName: Ultimate_Walker_v1_0_1:leg_binded_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_upperleg
+      parentName: Ultimate_Walker_v1_0_1:R_leg_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_leg
+      parentName: Ultimate_Walker_v1_0_1:R_leg_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_leg_Grp
+      parentName: Ultimate_Walker_v1_0_1:leg_binded_grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_upperleg
+      parentName: Ultimate_Walker_v1_0_1:L_leg_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_leg
+      parentName: Ultimate_Walker_v1_0_1:L_leg_Grp
+      position: {x: -0, y: 0, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:leg_scale_Const
+      parentName: Ultimate_Walker_v1_0_1:Mesh_Grp
+      position: {x: 0.005830159, y: -0.013207235, z: -0.0012797071}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_but
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: -0.0060477327, y: 0.028164074, z: -0.0012653997}
+      rotation: {x: -0.005853286, y: 0.99661493, z: -0.08181681, w: 0.0055176206}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_but
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: 0.0047528106, y: 0.026984503, z: -0.005498585}
+      rotation: {x: -0.0372502, y: 0.94922304, z: 0.3120844, w: 0.013832589}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_knee
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: -0.005941317, y: 0.018410975, z: 0.00034746903}
+      rotation: {x: -0.0060644015, y: 0.9990507, z: -0.042814482, w: 0.005284707}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_knee
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: 0.0055372873, y: 0.019051561, z: -0.011345688}
+      rotation: {x: -0.025726853, y: 0.98059005, z: -0.1920008, w: 0.030282782}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_ankle
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: -0.005846639, y: 0.009733252, z: 0.0017829572}
+      rotation: {x: 1.7118251e-17, y: 0.9653088, z: -0.26111108, w: -1.7122193e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_ankle
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: 0.005830158, y: 0.011198168, z: -0.0073946076}
+      rotation: {x: 2.5476393e-16, y: 0.95992523, z: -0.28025624, w: -1.381686e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_foot
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: -0.006486119, y: 0.009121993, z: 0.0019403558}
+      rotation: {x: 1.7118251e-17, y: 0.9653088, z: -0.26111108, w: -1.7122193e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_foot
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: 0.0064696376, y: 0.01059365, z: -0.0072130263}
+      rotation: {x: 2.5476393e-16, y: 0.95992523, z: -0.28025624, w: -1.381686e-16}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:R_toe
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: -0.006486119, y: 0.008244497, z: 0.0037808772}
+      rotation: {x: 5.6504595e-17, y: 0.9972258, z: -0.0744357, w: -6.5620344e-17}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Ultimate_Walker_v1_0_1:L_toe
+      parentName: Ultimate_Walker_v1_0_1:leg_scale_Const
+      position: {x: 0.0064696376, y: 0.009765957, z: -0.005303767}
+      rotation: {x: 3.539709e-17, y: 0.995913, z: -0.090317965, w: -2.8764958e-16}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 1
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
