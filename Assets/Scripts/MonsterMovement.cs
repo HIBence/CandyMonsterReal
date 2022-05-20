@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class MonsterMovement : MonoBehaviour
@@ -12,6 +13,8 @@ public class MonsterMovement : MonoBehaviour
     private GameObject[] leftPlatforms;
     [SerializeField]
     private GameObject[] rightPlatforms;
+    [SerializeField]
+    private GameObject monsterSpeechBubble;
 
     private GameObject[] fallenPlatforms;
 
@@ -26,6 +29,7 @@ public class MonsterMovement : MonoBehaviour
     public bool onQuestionTile;
 
     private bool makingRightChoice;
+
 
     private NavMeshAgent Monster;
     private int currentQuestionNum = 0;
@@ -42,14 +46,7 @@ public class MonsterMovement : MonoBehaviour
         
     }
 
-    public bool reachedEnd()
-    {
-        if (currentQuestionNum + 1 == QuestionPlatforms.Length && Monster.remainingDistance == 0)
-        {
-            return true;
-        }
-        else return false;
-    }
+    
     //IEnumerator Sequence()
     //{
 
@@ -67,6 +64,7 @@ public class MonsterMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FaceTarget(new Vector3(-15,0,10));
         if (Monster.remainingDistance == 0 && !MovingToChosenPlatform)
         {
             onQuestionTile = true;
@@ -80,7 +78,15 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-   
+
+
+    private void FaceTarget(Vector3 destination)
+    {
+        Vector3 lookPos = destination - transform.position;
+        lookPos.y = 0;
+        Quaternion rotation = Quaternion.LookRotation(lookPos);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
+    }
 
 
     public void makeRightChoice(int platformToGo)
@@ -120,6 +126,15 @@ public class MonsterMovement : MonoBehaviour
             GoToNextQuestion();
         }
     }
+
+    public bool reachedEnd()
+    {
+        if (QuestionPlatforms.Length <= currentQuestionNum+1 && Monster.remainingDistance == 0)
+        {
+            return true;
+        }
+        else return false;
+    }
     public void GetOutOfWater()
     {
         StartCoroutine(revertFellInWater());
@@ -135,12 +150,15 @@ public class MonsterMovement : MonoBehaviour
     IEnumerator DoCelebration()
     {
         //do celebration animation
+        monsterSpeechBubble.transform.GetChild(0).GetComponent<TMP_Text>().text = "Correct, YAY!";
+        monsterSpeechBubble.SetActive(true);
         yield return new WaitForSeconds(1);
     }
     IEnumerator FallInWater()
     {
         //fall in water
-        
+        monsterSpeechBubble.transform.GetChild(0).GetComponent<TMP_Text>().text = "Oh no :(";
+        monsterSpeechBubble.SetActive(true);
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
         chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
 
@@ -176,6 +194,7 @@ public class MonsterMovement : MonoBehaviour
     private void GoToNextQuestion()
     {
         currentQuestionNum++;
+        monsterSpeechBubble.SetActive(false);
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
         readyForNextQuestion = true;
         MovingToChosenPlatform = false;
