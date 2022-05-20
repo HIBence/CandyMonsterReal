@@ -13,6 +13,12 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField]
     private GameObject[] rightPlatforms;
 
+    private GameObject[] fallenPlatforms;
+
+    private Vector3[] fallenPlatformOgPOsitions;
+
+    private GameObject chosenPlatform;
+
     public bool readyForNextQuestion = true;
 
     private bool MovingToChosenPlatform = false;
@@ -136,6 +142,8 @@ public class MonsterMovement : MonoBehaviour
         //fall in water
         
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
+        chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
         Debug.Log("falling");
         
         
@@ -146,18 +154,21 @@ public class MonsterMovement : MonoBehaviour
     }
     private void MoveToChosenPlatform(int p2g)
     {
+        
         onQuestionTile = false;
         if (p2g == 1)
         {
             Debug.Log("goleft");
             //go left
             Monster.SetDestination(leftPlatforms[currentQuestionNum].transform.position);
+            chosenPlatform = leftPlatforms[currentQuestionNum];
         }
         else
         {
             //go right
             Debug.Log("goright");
             Monster.SetDestination(rightPlatforms[currentQuestionNum].transform.position);
+            chosenPlatform = rightPlatforms[currentQuestionNum];
         }
         MovingToChosenPlatform = true;
         
