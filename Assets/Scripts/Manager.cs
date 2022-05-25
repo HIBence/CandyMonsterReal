@@ -44,6 +44,8 @@ public class Manager : MonoBehaviour
             n++;
             
         }
+
+        monster.reachedQuestiontile.AddListener(ShowQuestion);
         
     }
 
@@ -53,21 +55,14 @@ public class Manager : MonoBehaviour
         if(monster.reachedEnd())
         {
             GameOverUI.SetActive(true);
-        }
-        if(currentQuestionNum >= 4)
-        {
-            return;
-        }
-        if(monsterAgent.remainingDistance == 0 && monster.onQuestionTile && currentQuestionNum <= totalNumOfQuestions&&monster.readyForNextQuestion)
-        {
-            monster.readyForNextQuestion = false;
-            ShowQuestion();
-            currentQuestionNum++;
-            
-        }
+        } 
     }
     private void ShowQuestion()
     {
+        if (monster.reachedEnd())
+        {
+            return;
+        }
         questionTextBox.SetActive(true);
         int rando = 0;
         if (questions.Count > 0)
@@ -86,16 +81,14 @@ public class Manager : MonoBehaviour
         int fiftyfifty = Random.Range(0, 2);
         if(fiftyfifty == 0)
         {
-            LeftPlatformsAnswerTxts[currentQuestionNum].gameObject.transform.parent.gameObject.SetActive(true);
-            RightPlatformsAnswerTxts[currentQuestionNum].gameObject.transform.parent.gameObject.SetActive(true);
+            PlatformAnswersTxtsEnabled(true);
             LeftPlatformsAnswerTxts[currentQuestionNum].text = questions[rando].CorrectAnswer;
             RightPlatformsAnswerTxts[currentQuestionNum].text = questions[rando].WrongAnswer;
             leftCorrect = true;
         }
         else
         {
-            LeftPlatformsAnswerTxts[currentQuestionNum].gameObject.transform.parent.gameObject.SetActive(true);
-            RightPlatformsAnswerTxts[currentQuestionNum].gameObject.transform.parent.gameObject.SetActive(true);
+            PlatformAnswersTxtsEnabled(true);
             LeftPlatformsAnswerTxts[currentQuestionNum].text = questions[rando].WrongAnswer;
             RightPlatformsAnswerTxts[currentQuestionNum].text = questions[rando].CorrectAnswer;
             leftCorrect = false;
@@ -104,6 +97,8 @@ public class Manager : MonoBehaviour
         questions.Remove(questions[rando]);
 
         Ireciever.gameObject.SetActive(true);
+        currentQuestionNum++;
+        monster.currentQuestionNum = currentQuestionNum;
         //choose random question
         //display question
         //display possible answers over the 2 following tiles randomly + set correct and inccorect 
@@ -112,22 +107,35 @@ public class Manager : MonoBehaviour
         // check if chosen input was correct or incorrect 
         //show result with methoids below
     }
-    public void ChooseOption(int choice)
+    public void ChooseOption(int intChoice)
     {
+        Choice chosen = (Choice)intChoice;
         Ireciever.gameObject.SetActive(false);
+
         questionTextBox.SetActive(false);
         LeftPlatformsAnswerTxts[currentQuestionNum-1].gameObject.transform.parent.gameObject.SetActive(false);
         RightPlatformsAnswerTxts[currentQuestionNum-1].gameObject.transform.parent.gameObject.SetActive(false);
-        if ((choice == 1 && leftCorrect)|| (choice == 2 && !leftCorrect))
+        if ((chosen == Choice.LEFT && leftCorrect)|| (chosen == Choice.RIGHT && !leftCorrect))
         {
-            if(leftCorrect) monster.makeRightChoice(1);
-            else monster.makeRightChoice(2);
+            if(leftCorrect) monster.makeRightChoice(Choice.LEFT);
+            else monster.makeRightChoice(Choice.RIGHT);
 
         }
         else 
         {
-            if (leftCorrect) monster.makeWrongChoice(2);
-            else monster.makeWrongChoice(1);
+            if (leftCorrect) monster.makeWrongChoice(Choice.RIGHT);
+            else monster.makeWrongChoice(Choice.LEFT);
         }
     }
+
+    private void PlatformAnswersTxtsEnabled(bool enabled) {
+        LeftPlatformsAnswerTxts[currentQuestionNum].gameObject.transform.parent.gameObject.SetActive(enabled);
+        RightPlatformsAnswerTxts[currentQuestionNum].gameObject.transform.parent.gameObject.SetActive(enabled);
+    }
+}
+
+public enum Choice
+{
+    LEFT,
+    RIGHT
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using TMPro;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class MonsterMovement : MonoBehaviour
@@ -16,23 +17,26 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField]
     private GameObject monsterSpeechBubble;
 
-    private GameObject[] fallenPlatforms;
-
-    private Vector3[] fallenPlatformOgPOsitions;
-
     private GameObject chosenPlatform;
 
-    public bool readyForNextQuestion = true;
+    //public bool readyForNextQuestion = true;
 
-    private bool MovingToChosenPlatform = false;
+    //private bool MovingToChosenPlatform = false;
 
-    public bool onQuestionTile;
+
+    public UnityEvent reachedQuestiontile = new UnityEvent();
+    //public UnityEvent reachedEnd = new UnityEvent();
 
     private bool makingRightChoice;
 
 
     private NavMeshAgent Monster;
-    private int currentQuestionNum = 0;
+
+    public int currentQuestionNum;
+
+    private int counter =0;
+    private bool waitingOnTile = false;
+
     
 
 
@@ -42,38 +46,27 @@ public class MonsterMovement : MonoBehaviour
         currentQuestionNum = 0;
         Monster = GetComponent<NavMeshAgent>();
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
-
-        
     }
 
-    
-    //IEnumerator Sequence()
-    //{
-
-    //    yield return MoveToNextTile();
-
-    //    Debug.Log("");
-
-    //}
-
-    //IEnumerator MoveToNextTile(Transform targetTile)
-    //{
-
-    //}
-
-    // Update is called once per frame
     void Update()
     {
         FaceTarget(new Vector3(-15,0,10));
-        if (Monster.remainingDistance == 0 && !MovingToChosenPlatform)
+        Debug.Log(currentQuestionNum);
+        if (!waitingOnTile  && Monster.remainingDistance == 0 && counter<=QuestionPlatforms.Length+2)
         {
-            onQuestionTile = true;
-        }
-        if (Monster.remainingDistance == 0 && MovingToChosenPlatform)
-        {
-            MovingToChosenPlatform = false;
-            StartCoroutine(PreformResultAction(makingRightChoice)) ;
-            Debug.Log("update calling preform");
+            waitingOnTile = true;
+            counter++;
+            if (counter % 2 == 0)
+            {
+                //on answer tile 
+                StartCoroutine(PreformResultAction(makingRightChoice));
+                Debug.Log("update calling preform");
+            }
+            else
+            {
+                //on question tile 
+                reachedQuestiontile.Invoke();
+            }
             
         }
     }
@@ -89,7 +82,7 @@ public class MonsterMovement : MonoBehaviour
     }
 
 
-    public void makeRightChoice(int platformToGo)
+    public void makeRightChoice(Choice platformToGo)
     {
         makingRightChoice = true;
         MoveToChosenPlatform(platformToGo);
@@ -99,7 +92,7 @@ public class MonsterMovement : MonoBehaviour
         //move to next question platform
 
     }
-    public void makeWrongChoice(int platformToGo)
+    public void makeWrongChoice(Choice platformToGo)
     {
         makingRightChoice = false;
         MoveToChosenPlatform(platformToGo);
@@ -107,6 +100,28 @@ public class MonsterMovement : MonoBehaviour
         //move to current wrong platform
         //play falling in animation sad
         //jump out of water to next question platform
+    }
+
+    private void MoveToChosenPlatform(Choice chosenSide)
+    {
+
+        
+        if (chosenSide == Choice.LEFT)
+        {
+            Debug.Log("goleft");
+            //go left
+            Monster.SetDestination(leftPlatforms[currentQuestionNum-1].transform.position);
+            chosenPlatform = leftPlatforms[currentQuestionNum-1];
+        }
+        else
+        {
+            //go right
+            Debug.Log("goright");
+            Monster.SetDestination(rightPlatforms[currentQuestionNum-1].transform.position);
+            chosenPlatform = rightPlatforms[currentQuestionNum-1];
+        }
+        waitingOnTile = false;
+
     }
 
     IEnumerator PreformResultAction(bool correct)
@@ -127,14 +142,6 @@ public class MonsterMovement : MonoBehaviour
         }
     }
 
-    public bool reachedEnd()
-    {
-        if (QuestionPlatforms.Length <= currentQuestionNum+1 && Monster.remainingDistance == 0)
-        {
-            return true;
-        }
-        else return false;
-    }
     public void GetOutOfWater()
     {
         StartCoroutine(revertFellInWater());
@@ -170,34 +177,24 @@ public class MonsterMovement : MonoBehaviour
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.Log("GravityReset");
     }
-    private void MoveToChosenPlatform(int p2g)
-    {
-        
-        onQuestionTile = false;
-        if (p2g == 1)
-        {
-            Debug.Log("goleft");
-            //go left
-            Monster.SetDestination(leftPlatforms[currentQuestionNum].transform.position);
-            chosenPlatform = leftPlatforms[currentQuestionNum];
-        }
-        else
-        {
-            //go right
-            Debug.Log("goright");
-            Monster.SetDestination(rightPlatforms[currentQuestionNum].transform.position);
-            chosenPlatform = rightPlatforms[currentQuestionNum];
-        }
-        MovingToChosenPlatform = true;
-        
-    }
+    
     private void GoToNextQuestion()
     {
-        currentQuestionNum++;
+        //currentQuestionNum++;
         monsterSpeechBubble.SetActive(false);
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
-        readyForNextQuestion = true;
-        MovingToChosenPlatform = false;
+        waitingOnTile = false;
+        //readyForNextQuestion = true;
+        //MovingToChosenPlatform = false;
         
+    }
+    public bool reachedEnd()
+    {
+        if (QuestionPlatforms.Length <= currentQuestionNum+1 && Monster.remainingDistance == 0&& !waitingOnTile)
+        {
+            Debug.Log("reached end true ");
+            return true;
+        }
+        else return false;
     }
 }
