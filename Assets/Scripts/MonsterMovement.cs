@@ -141,6 +141,23 @@ public class MonsterMovement : MonoBehaviour
             GoToNextQuestion();
         }
     }
+    IEnumerator FallInWater()
+    {
+        //fall in water is manipulation of the 3D model as we do not currently have animations but once 
+        //those are finished this model manipulation will be replaced by them
+        monsterSpeechBubble.transform.GetChild(0).GetComponent<TMP_Text>().text = "Oh no :(";
+        monsterSpeechBubble.SetActive(true);
+        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
+        chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
+
+        Debug.Log("falling");
+
+
+        yield return new WaitForSeconds(1.2f);
+        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = false;
+        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
+        Debug.Log("GravityReset");
+    }
 
     public void GetOutOfWater()
     {
@@ -161,31 +178,13 @@ public class MonsterMovement : MonoBehaviour
         monsterSpeechBubble.SetActive(true);
         yield return new WaitForSeconds(1);
     }
-    IEnumerator FallInWater()
-    {
-        //fall in water
-        monsterSpeechBubble.transform.GetChild(0).GetComponent<TMP_Text>().text = "Oh no :(";
-        monsterSpeechBubble.SetActive(true);
-        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
-        chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
-        Debug.Log("falling");
-        
-        
-        yield return new WaitForSeconds(1.2f);
-        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = false;
-        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
-        Debug.Log("GravityReset");
-    }
+    
     
     private void GoToNextQuestion()
     {
-        //currentQuestionNum++;
         monsterSpeechBubble.SetActive(false);
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
         waitingOnTile = false;
-        //readyForNextQuestion = true;
-        //MovingToChosenPlatform = false;
         
     }
     public bool reachedEnd()
