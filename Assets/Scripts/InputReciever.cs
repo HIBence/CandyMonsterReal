@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputReciever : MonoBehaviour
 {
     [SerializeField]
-    private Manager MonsterManager;
+    private RiverGameManager MonsterManager;
     // Start is called before the first frame update
     void Start()
     {

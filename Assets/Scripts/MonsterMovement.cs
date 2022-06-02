@@ -19,13 +19,8 @@ public class MonsterMovement : MonoBehaviour
 
     private GameObject chosenPlatform;
 
-    //public bool readyForNextQuestion = true;
-
-    //private bool MovingToChosenPlatform = false;
-
-
     public UnityEvent reachedQuestiontile = new UnityEvent();
-    //public UnityEvent reachedEnd = new UnityEvent();
+
 
     private bool makingRightChoice;
 
@@ -50,9 +45,14 @@ public class MonsterMovement : MonoBehaviour
 
     void Update()
     {
-        FaceTarget(new Vector3(-15,0,10));
+        
+    }
+
+    public void updateRiverGameMethods()
+    {
+        FaceTarget(new Vector3(-15, 0, 10));
         Debug.Log(currentQuestionNum);
-        if (!waitingOnTile  && Monster.remainingDistance == 0 && counter<=QuestionPlatforms.Length+2)
+        if (!waitingOnTile && Monster.remainingDistance == 0 && counter <= QuestionPlatforms.Length + 2)
         {
             waitingOnTile = true;
             counter++;
@@ -67,9 +67,10 @@ public class MonsterMovement : MonoBehaviour
                 //on question tile 
                 reachedQuestiontile.Invoke();
             }
-            
+
         }
     }
+
 
 
 
