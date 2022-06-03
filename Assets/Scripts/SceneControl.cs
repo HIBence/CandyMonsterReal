@@ -5,6 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SceneControl : MonoBehaviour
 {
+    [SerializeField] RiverGameManager riverManager;
+    [SerializeField] StartingArea1 startAreaManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,5 +26,11 @@ public class SceneControl : MonoBehaviour
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");
+    }
+
+    public void proceedToRiver()
+    {
+        startAreaManager.gameObject.SetActive(false);
+        riverManager.gameObject.SetActive(true);
     }
 }

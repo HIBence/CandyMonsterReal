@@ -54,9 +54,9 @@ Material:
     - _WaveHeight: 1
     m_Colors:
     - RefractionScale: {r: 4, g: 4, b: 0, a: 0}
-    - _DeepColor: {r: 0.07989803, g: 0.04828231, b: 0.3301887, a: 0}
+    - _DeepColor: {r: 0.5176471, g: 0.28235295, b: 0.59607846, a: 0}
     - _FoamColor: {r: 1, g: 1, b: 1, a: 0.74509805}
-    - _SurfaceColor: {r: 0.3254717, g: 0.818098, b: 1, a: 0}
+    - _SurfaceColor: {r: 0.81568635, g: 0.8745099, b: 0.9058824, a: 0.6156863}
   m_BuildTextureStacks: []
 --- !u!114 &407638826130945053
 MonoBehaviour:

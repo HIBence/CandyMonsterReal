@@ -20,41 +20,97 @@ public class MonsterMovement : MonoBehaviour
     private GameObject chosenPlatform;
 
     public UnityEvent reachedQuestiontile = new UnityEvent();
-
+    public UnityEvent reachedDestination = new UnityEvent();
 
     private bool makingRightChoice;
-
+    private Vector3 currentTarget;
 
     private NavMeshAgent Monster;
 
     public int currentQuestionNum;
 
-    private int counter =0;
-    private bool waitingOnTile = false;
+    private int counter = 0;
+    private bool waiting = false;
 
-    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
         currentQuestionNum = 0;
-        Monster = GetComponent<NavMeshAgent>();
-        Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
+        
+
     }
 
     void Update()
     {
+
+    }
+    
+    //general methods
+    private void FaceTarget(Vector3 destination)
+    {
+        Vector3 lookPos =  transform.position- destination;
+        lookPos.y = 0;
+        if (lookPos != Vector3.zero)
+        {
+            Quaternion rotation = Quaternion.LookRotation(lookPos);
+            transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
+        }
         
     }
 
+    public void SetDestinationTransform(Transform destTransform)
+    {
+        Monster = GetComponent<NavMeshAgent>();
+        Monster.SetDestination(destTransform.position);
+        waiting = false;
+        currentTarget = destTransform.position;
+        
+    }
+
+    public void GoToRandomDestination(List<Transform> destiantions)
+    {
+        Debug.Log("gotorandom called");
+        int chosenDestination = Random.Range(0, destiantions.Count - 1);
+        Monster.SetDestination(destiantions[chosenDestination].position);
+        waiting = false;
+        currentTarget = destiantions[chosenDestination].position;
+       
+    }
+    //start area 1 methods
+    public void UpdateStartingArea1Methods()
+    {
+        if (!waiting)
+        {
+            FaceTarget(currentTarget);
+        }
+        
+        if ( !waiting && Monster.remainingDistance == 0 )
+        {
+            waiting = true;
+            reachedDestination.Invoke();
+            Debug.Log("reached dest hit in uypdate");
+            
+        }
+    }
+
+
+    //river game methods 
+
+    public void startRiverGame()
+    {
+        Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
+        waiting = false;
+    }
     public void updateRiverGameMethods()
     {
-        FaceTarget(new Vector3(-15, 0, 10));
-        Debug.Log(currentQuestionNum);
-        if (!waitingOnTile && Monster.remainingDistance == 0 && counter <= QuestionPlatforms.Length + 2)
+        FaceTarget(new Vector3(50, 0, 10));
+        //Debug.Log(currentQuestionNum);
+        if (!waiting && Monster.remainingDistance == 0 && counter <= QuestionPlatforms.Length + 2)
         {
-            waitingOnTile = true;
+            waiting = true;
             counter++;
             if (counter % 2 == 0)
             {
@@ -70,24 +126,11 @@ public class MonsterMovement : MonoBehaviour
 
         }
     }
-
-
-
-
-    private void FaceTarget(Vector3 destination)
-    {
-        Vector3 lookPos = destination - transform.position;
-        lookPos.y = 0;
-        Quaternion rotation = Quaternion.LookRotation(lookPos);
-        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
-    }
-
-
     public void makeRightChoice(Choice platformToGo)
     {
         makingRightChoice = true;
         MoveToChosenPlatform(platformToGo);
-        
+
         //move to current correct platform
         //play celebration animation 
         //move to next question platform
@@ -97,7 +140,7 @@ public class MonsterMovement : MonoBehaviour
     {
         makingRightChoice = false;
         MoveToChosenPlatform(platformToGo);
-       
+
         //move to current wrong platform
         //play falling in animation sad
         //jump out of water to next question platform
@@ -106,22 +149,22 @@ public class MonsterMovement : MonoBehaviour
     private void MoveToChosenPlatform(Choice chosenSide)
     {
 
-        
+
         if (chosenSide == Choice.LEFT)
         {
             Debug.Log("goleft");
             //go left
-            Monster.SetDestination(leftPlatforms[currentQuestionNum-1].transform.position);
-            chosenPlatform = leftPlatforms[currentQuestionNum-1];
+            Monster.SetDestination(leftPlatforms[currentQuestionNum - 1].transform.position);
+            chosenPlatform = leftPlatforms[currentQuestionNum - 1];
         }
         else
         {
             //go right
             Debug.Log("goright");
-            Monster.SetDestination(rightPlatforms[currentQuestionNum-1].transform.position);
-            chosenPlatform = rightPlatforms[currentQuestionNum-1];
+            Monster.SetDestination(rightPlatforms[currentQuestionNum - 1].transform.position);
+            chosenPlatform = rightPlatforms[currentQuestionNum - 1];
         }
-        waitingOnTile = false;
+        waiting = false;
 
     }
 
@@ -138,7 +181,7 @@ public class MonsterMovement : MonoBehaviour
             Debug.Log("doing incorrect");
             //do fall in water and jump out
             yield return FallInWater();
-            GetOutOfWater();
+            StartCoroutine(revertFellInWater());
             GoToNextQuestion();
         }
     }
@@ -160,10 +203,6 @@ public class MonsterMovement : MonoBehaviour
         Debug.Log("GravityReset");
     }
 
-    public void GetOutOfWater()
-    {
-        StartCoroutine(revertFellInWater());
-    }
     IEnumerator revertFellInWater()
     {
         Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = true;
@@ -179,22 +218,26 @@ public class MonsterMovement : MonoBehaviour
         monsterSpeechBubble.SetActive(true);
         yield return new WaitForSeconds(1);
     }
-    
-    
+
+
     private void GoToNextQuestion()
     {
         monsterSpeechBubble.SetActive(false);
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
-        waitingOnTile = false;
-        
+        waiting = false;
+
     }
     public bool reachedEnd()
     {
-        if (QuestionPlatforms.Length <= currentQuestionNum+1 && Monster.remainingDistance == 0&& !waitingOnTile)
+        if (QuestionPlatforms.Length <= currentQuestionNum + 1 && Monster.remainingDistance == 0 && !waiting)
         {
             Debug.Log("reached end true ");
             return true;
         }
         else return false;
     }
+
+
+
+
 }

@@ -7,8 +7,6 @@ using TMPro;
 public class RiverGameManager : MonoBehaviour
 {
     [SerializeField]
-    private NavMeshAgent monsterAgent;
-    [SerializeField]
     private MonsterMovement monster;
     [SerializeField]
     private TMP_Text questionText;
@@ -46,7 +44,7 @@ public class RiverGameManager : MonoBehaviour
         }
 
         monster.reachedQuestiontile.AddListener(ShowQuestion);
-        
+        monster.startRiverGame();
     }
 
     // Update is called once per frame

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<QCARInfo>
+    <TargetSet version="33.0" toolVersion="v5.3.0-11-g652b76a">
+        <ModelTarget name="FruitdrankProp" targetId="6f9364f91e6f4ab48a78276abe47cbbe" bbox="0.037761 -0.025117 -0.042280 0.153904 0.244699 0.052004" version="13.0" toolVersion="v5.3.0-11-g652b76a" trackingMode="scan" upVector="0.0 1.0 0.0" />
+        <ModelTarget name="DragonProp" targetId="31672f6b177f48dca8a6ff8aa1cd97ed" bbox="0.039132 0.008940 -0.232206 0.322665 0.285416 0.023514" version="13.0" toolVersion="v5.3.0-11-g652b76a" trackingMode="scan" upVector="0.0 1.0 0.0" />
+    </TargetSet>
+    <Assembly name="FruitdrankProp" assemblyId="9ae76156bdc64846b7923fa42658381e">
+        <Part name="FruitdrankProp" translation="0 0 0" rotation="AD: 0 0 1 0" />
+        <EntryPoint name="(none)" trained="yes" />
+    </Assembly>
+    <Assembly name="DragonProp" assemblyId="d4405757ba88418ca14e7f0608c51cab">
+        <Part name="DragonProp" translation="0 0 0" rotation="AD: 0 0 1 0" />
+        <EntryPoint name="(none)" trained="yes" />
+    </Assembly>
+    <ModelTargetDatabase mtDBid="b89129cfff4d4bf3956a3aaa773338d9" name="CandylandTrialProps" toolVersion="v5.3.0-11-g652b76a" version="33.0">
+        <RecognitionResult assemblyId="9ae76156bdc64846b7923fa42658381e" assemblyName="FruitdrankProp" entryPoint="viewpoint_0003" />
+        <RecognitionResult assemblyId="9ae76156bdc64846b7923fa42658381e" assemblyName="FruitdrankProp" entryPoint="viewpoint_0001" />
+        <RecognitionResult assemblyId="d4405757ba88418ca14e7f0608c51cab" assemblyName="DragonProp" entryPoint="viewpoint_0001" />
+        <RecognitionResult assemblyId="d4405757ba88418ca14e7f0608c51cab" assemblyName="DragonProp" entryPoint="viewpoint_0002" />
+    </ModelTargetDatabase>
+</QCARInfo>
