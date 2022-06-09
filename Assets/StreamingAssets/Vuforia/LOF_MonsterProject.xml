@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="Candy-Crush-copy" size="0.200000 0.111111" />
+    <ImageTarget name="Fun-Facts-Candy-800x500" size="0.200000 0.125000" />
     <ImageTarget name="hard-candies" size="0.070000 0.047110" />
     <ImageTarget name="candies" size="0.070000 0.046621" />
   </Tracking>

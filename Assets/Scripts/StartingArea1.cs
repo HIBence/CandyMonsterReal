@@ -12,6 +12,7 @@ public class StartingArea1 : MonoBehaviour
     [SerializeField] AudioSource RiverGameMusic;
     [SerializeField] MonsterMovement Monster;
     [SerializeField] SceneControl sceneController;
+    [SerializeField] GameObject CS1Timeline;
 
     private List<Transform> targets = new List<Transform>();
     private int numOfDestinationsHit = 0;
@@ -69,26 +70,29 @@ public class StartingArea1 : MonoBehaviour
     IEnumerator IntroInteraction()
     {
         //do animation
+
+        CS1Timeline.gameObject.SetActive(true);
         yield return new WaitForSeconds(23.0f);
+        CS1Timeline.gameObject.SetActive(false);
         Monster.GoToRandomDestination(targets);
     }
     IEnumerator RandomInteraction()
     {
         //do animation
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.0f);
         Monster.GoToRandomDestination(targets);
     }
     IEnumerator InteractThenGoToCutscene()
     {
         //do animation
-        yield return new WaitForSeconds(3.0f);
+        yield return new WaitForSeconds(1.0f);
         Monster.SetDestinationTransform(cutscene1Position.transform);
     }
     IEnumerator PlayCutscene()
     {
         //do cutscene
 
-        yield return new WaitForSeconds(5.0f);
+        yield return new WaitForSeconds(3.0f);
         cutscene1music.Stop();
         RiverGameMusic.Play();
         sceneController.proceedToRiver();

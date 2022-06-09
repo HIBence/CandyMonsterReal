@@ -32,6 +32,8 @@ public class MonsterMovement : MonoBehaviour
     private int counter = 0;
     private bool waiting = false;
 
+    private Animator ReegieAnimator;
+
 
 
 
@@ -39,12 +41,38 @@ public class MonsterMovement : MonoBehaviour
     void Start()
     {
         currentQuestionNum = 0;
-        
-
+        ReegieAnimator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     void Update()
     {
+        if (Monster.remainingDistance > 0)
+        {
+            ReegieAnimator.SetBool("Moving", true);
+        }
+        else
+        {
+            ReegieAnimator.SetBool("Moving", false);
+        }
+        if (Monster.isOnOffMeshLink)
+        {
+            ReegieAnimator.SetBool("Jumping", true);
+        }
+        else
+        {
+            ReegieAnimator.SetBool("Jumping", false);
+        }
+
+
+        if (transform.GetChild(0).GetComponent<Rigidbody>().velocity != Vector3.zero)
+        {
+            
+            
+        }
+        else
+        {
+            
+        }
 
     }
     
@@ -57,8 +85,7 @@ public class MonsterMovement : MonoBehaviour
         {
             Quaternion rotation = Quaternion.LookRotation(lookPos);
             transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 1);
-        }
-        
+        }  
     }
 
     public void SetDestinationTransform(Transform destTransform)
@@ -66,8 +93,7 @@ public class MonsterMovement : MonoBehaviour
         Monster = GetComponent<NavMeshAgent>();
         Monster.SetDestination(destTransform.position);
         waiting = false;
-        currentTarget = destTransform.position;
-        
+        currentTarget = destTransform.position; 
     }
 
     public void GoToRandomDestination(List<Transform> destiantions)
@@ -102,11 +128,14 @@ public class MonsterMovement : MonoBehaviour
     public void startRiverGame()
     {
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
+        currentTarget = QuestionPlatforms[currentQuestionNum].transform.position;
         waiting = false;
     }
     public void updateRiverGameMethods()
     {
-        FaceTarget(new Vector3(50, 0, 10));
+        Monster = GetComponent<NavMeshAgent>();
+        //FaceTarget(new Vector3(50, 0, 10));
+        FaceTarget(currentTarget);
         //Debug.Log(currentQuestionNum);
         if (!waiting && Monster.remainingDistance == 0 && counter <= QuestionPlatforms.Length + 2)
         {
@@ -155,6 +184,7 @@ public class MonsterMovement : MonoBehaviour
             Debug.Log("goleft");
             //go left
             Monster.SetDestination(leftPlatforms[currentQuestionNum - 1].transform.position);
+            currentTarget = leftPlatforms[currentQuestionNum - 1].transform.position;
             chosenPlatform = leftPlatforms[currentQuestionNum - 1];
         }
         else
@@ -162,6 +192,7 @@ public class MonsterMovement : MonoBehaviour
             //go right
             Debug.Log("goright");
             Monster.SetDestination(rightPlatforms[currentQuestionNum - 1].transform.position);
+            currentTarget = rightPlatforms[currentQuestionNum - 1].transform.position;
             chosenPlatform = rightPlatforms[currentQuestionNum - 1];
         }
         waiting = false;
@@ -174,16 +205,27 @@ public class MonsterMovement : MonoBehaviour
         {
             Debug.Log("doing correct");
             yield return DoCelebration();
+            
             GoToNextQuestion();
         }
         else
         {
             Debug.Log("doing incorrect");
             //do fall in water and jump out
+            //ReegieAnimator.SetBool();
             yield return FallInWater();
             StartCoroutine(revertFellInWater());
             GoToNextQuestion();
         }
+    }
+    IEnumerator DoCelebration()
+    {
+        //do celebration animation
+        ReegieAnimator.SetBool("Celebrating", true);
+        monsterSpeechBubble.transform.GetChild(0).GetComponent<TMP_Text>().text = "Correct, YAY!";
+        monsterSpeechBubble.SetActive(true);
+        yield return new WaitForSeconds(3);
+        ReegieAnimator.SetBool("Celebrating", false);
     }
     IEnumerator FallInWater()
     {
@@ -193,11 +235,10 @@ public class MonsterMovement : MonoBehaviour
         monsterSpeechBubble.SetActive(true);
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = true;
         chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
-
+        ReegieAnimator.SetBool("Falling", true);
         Debug.Log("falling");
-
-
         yield return new WaitForSeconds(1.2f);
+        ReegieAnimator.SetBool("Falling", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.Log("GravityReset");
@@ -206,32 +247,28 @@ public class MonsterMovement : MonoBehaviour
     IEnumerator revertFellInWater()
     {
         Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = true;
+        ReegieAnimator.SetBool("Jumping", true);
         yield return new WaitForSeconds(1.2f);
+        ReegieAnimator.SetBool("Jumping", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
 
     }
-    IEnumerator DoCelebration()
-    {
-        //do celebration animation
-        monsterSpeechBubble.transform.GetChild(0).GetComponent<TMP_Text>().text = "Correct, YAY!";
-        monsterSpeechBubble.SetActive(true);
-        yield return new WaitForSeconds(1);
-    }
+    
 
 
     private void GoToNextQuestion()
     {
         monsterSpeechBubble.SetActive(false);
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
+        currentTarget = QuestionPlatforms[currentQuestionNum].transform.position;
         waiting = false;
 
     }
-    public bool reachedEnd()
+    public bool reachedEndOfRiver()
     {
         if (QuestionPlatforms.Length <= currentQuestionNum + 1 && Monster.remainingDistance == 0 && !waiting)
         {
-            Debug.Log("reached end true ");
             return true;
         }
         else return false;

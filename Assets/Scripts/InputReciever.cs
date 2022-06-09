@@ -23,5 +23,13 @@ public class InputReciever : MonoBehaviour
         {
             MonsterManager.ChooseOption(1);
         }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            MonsterManager.ChooseOption(2);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            MonsterManager.ChooseOption(3);
+        }
     }
 }
