@@ -16,6 +16,7 @@ public class StartingArea1 : MonoBehaviour
 
     private List<Transform> targets = new List<Transform>();
     private int numOfDestinationsHit = 0;
+    private bool proceeding = false;
 
 
     // Start is called before the first frame update
@@ -48,22 +49,26 @@ public class StartingArea1 : MonoBehaviour
             //start animation
             StartCoroutine(IntroInteraction());
         }
-        else if(numOfDestinationsHit < 4)
+        else if (proceeding)
+        {
+            StartCoroutine(PlayCutscene());
+        }
+        else if(numOfDestinationsHit >0)
         {
             StartCoroutine(RandomInteraction());
         }
-        else if (numOfDestinationsHit == 4)
+        
+        numOfDestinationsHit++;
+        
+    }
+    public void ProceedFromArea1()
+    {
+        if (!proceeding)
         {
-            StartCoroutine(InteractThenGoToCutscene());
-            
-        }
-        else
-        {
-            StartCoroutine(PlayCutscene());
-            
+            Monster.SetDestinationTransform(cutscene1Position.transform);
+            proceeding = true;
 
         }
-        numOfDestinationsHit++;
         
     }
 
@@ -72,7 +77,7 @@ public class StartingArea1 : MonoBehaviour
         //do animation
 
         CS1Timeline.gameObject.SetActive(true);
-        yield return new WaitForSeconds(23.0f);
+        yield return new WaitForSeconds(1.0f);
         CS1Timeline.gameObject.SetActive(false);
         Monster.GoToRandomDestination(targets);
     }
@@ -82,12 +87,9 @@ public class StartingArea1 : MonoBehaviour
         yield return new WaitForSeconds(1.0f);
         Monster.GoToRandomDestination(targets);
     }
-    IEnumerator InteractThenGoToCutscene()
-    {
-        //do animation
-        yield return new WaitForSeconds(1.0f);
-        Monster.SetDestinationTransform(cutscene1Position.transform);
-    }
+   
+       
+    
     IEnumerator PlayCutscene()
     {
         //do cutscene

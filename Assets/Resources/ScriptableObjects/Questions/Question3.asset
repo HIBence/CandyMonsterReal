@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: Als het k_ _d is, moet je een jas dragen.
   CorrectAnswer: ou
-  WrongAnswer: uo
+  WrongAnswer: au

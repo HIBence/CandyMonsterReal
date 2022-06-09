@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2bfd39cc7be6232419031df6953c63f4, type: 3}
   m_Name: Question17
   m_EditorClassIdentifier: 
-  questionText: Hij m_ _kt een vuurtje.
+  questionText: Hij m...kt een vuurtje.
   CorrectAnswer: aa
-  WrongAnswer: ee
+  WrongAnswer: a

@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: De koe loopt in het w_ _land.
   CorrectAnswer: ei
-  WrongAnswer: ey
+  WrongAnswer: ij

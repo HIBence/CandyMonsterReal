@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: _ _! Ik stoot mijn teen.
   CorrectAnswer: Au
-  WrongAnswer: Eu
+  WrongAnswer: Ou

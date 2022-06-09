@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: Aan het _ _nd van de dag gaat de zon onder.
   CorrectAnswer: ei
-  WrongAnswer: ey
+  WrongAnswer: ij

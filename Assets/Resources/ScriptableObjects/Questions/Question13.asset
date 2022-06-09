@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: Voor het slikken moet je goed k_ _wen.
   CorrectAnswer: au
-  WrongAnswer: eu
+  WrongAnswer: ou
