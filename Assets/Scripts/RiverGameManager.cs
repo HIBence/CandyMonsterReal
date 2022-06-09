@@ -157,6 +157,7 @@ public class RiverGameManager : MonoBehaviour
 
             return;
         }
+        LockScan();
         Debug.Log(OrderedAnswerProps.Count); 
         if (OrderedAnswerProps[intChoice] == randomCorrectPropIllustration && leftCorrect)
         {
@@ -171,9 +172,8 @@ public class RiverGameManager : MonoBehaviour
         questionTextBox.SetActive(false);
         LeftPlatformsAnswerTxts[currentQuestionNum - 1].gameObject.transform.parent.gameObject.SetActive(false);
         RightPlatformsAnswerTxts[currentQuestionNum - 1].gameObject.transform.parent.gameObject.SetActive(false);
+        
 
-
-        LockScan();
         //if ((chosen == Choice.LEFT && leftCorrect)|| (chosen == Choice.RIGHT && !leftCorrect))
         //{
         //    if(leftCorrect) 

@@ -237,7 +237,7 @@ public class MonsterMovement : MonoBehaviour
         chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
         ReegieAnimator.SetBool("Falling", true);
         Debug.Log("falling");
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(2f);
         ReegieAnimator.SetBool("Falling", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -248,7 +248,7 @@ public class MonsterMovement : MonoBehaviour
     {
         Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = true;
         ReegieAnimator.SetBool("Jumping", true);
-        yield return new WaitForSeconds(1.2f);
+        yield return new WaitForSeconds(1f);
         ReegieAnimator.SetBool("Jumping", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;

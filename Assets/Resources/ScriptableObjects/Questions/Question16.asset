@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionText: Een p_ _w heeft veel kleuren.
   CorrectAnswer: au
-  WrongAnswer: eu
+  WrongAnswer: ou

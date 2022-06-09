@@ -6,6 +6,8 @@ public class InputReciever : MonoBehaviour
 {
     [SerializeField]
     private RiverGameManager MonsterManager;
+    [SerializeField]
+    private StartingArea1 Area1Manager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,16 @@ public class InputReciever : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            MonsterManager.ChooseOption(0);
+            if (Area1Manager.gameObject.activeSelf)
+            {
+                Area1Manager.ProceedFromArea1();
+            }
+            else
+            {
+                MonsterManager.ChooseOption(0);
+            }
+            
+            
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
