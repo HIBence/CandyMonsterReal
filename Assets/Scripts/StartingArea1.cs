@@ -53,7 +53,7 @@ public class StartingArea1 : MonoBehaviour
         {
             StartCoroutine(PlayCutscene());
         }
-        else if(numOfDestinationsHit >0)
+        else 
         {
             StartCoroutine(RandomInteraction());
         }
@@ -76,16 +76,15 @@ public class StartingArea1 : MonoBehaviour
     {
         //do animation
 
-        CS1Timeline.gameObject.SetActive(true);
-        yield return new WaitForSeconds(1.0f);
-        CS1Timeline.gameObject.SetActive(false);
-        Monster.GoToRandomDestination(targets);
+        yield return new WaitForSeconds(23.0f);
+        if(!proceeding)Monster.GoToRandomDestination(targets);
+        
     }
     IEnumerator RandomInteraction()
     {
         //do animation
         yield return new WaitForSeconds(1.0f);
-        Monster.GoToRandomDestination(targets);
+        if (!proceeding) Monster.GoToRandomDestination(targets);
     }
    
        

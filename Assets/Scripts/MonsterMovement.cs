@@ -134,22 +134,23 @@ public class MonsterMovement : MonoBehaviour
     public void updateRiverGameMethods()
     {
         Monster = GetComponent<NavMeshAgent>();
-        //FaceTarget(new Vector3(50, 0, 10));
         FaceTarget(currentTarget);
         //Debug.Log(currentQuestionNum);
         if (!waiting && Monster.remainingDistance == 0 && counter <= QuestionPlatforms.Length + 2)
         {
             waiting = true;
             counter++;
-            if (counter % 2 == 0)
+            if (counter % 2 == 0) // Optimeze ALL THIS propably why the bug happens//or not 
             {
                 //on answer tile 
+                FaceTarget(new Vector3(50, 0, 10));
                 StartCoroutine(PreformResultAction(makingRightChoice));
                 Debug.Log("update calling preform");
             }
             else
             {
                 //on question tile 
+                FaceTarget(new Vector3(50, 0, 10));
                 reachedQuestiontile.Invoke();
             }
 
@@ -237,7 +238,7 @@ public class MonsterMovement : MonoBehaviour
         chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
         ReegieAnimator.SetBool("Falling", true);
         Debug.Log("falling");
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         ReegieAnimator.SetBool("Falling", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
@@ -252,7 +253,7 @@ public class MonsterMovement : MonoBehaviour
         ReegieAnimator.SetBool("Jumping", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
-
+        
     }
     
 

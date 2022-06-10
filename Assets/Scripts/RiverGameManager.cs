@@ -158,17 +158,15 @@ public class RiverGameManager : MonoBehaviour
             return;
         }
         LockScan();
+
         Debug.Log(OrderedAnswerProps.Count); 
-        if (OrderedAnswerProps[intChoice] == randomCorrectPropIllustration && leftCorrect)
-        {
-            monster.makeRightChoice(Choice.LEFT);
-        }
-        else if (OrderedAnswerProps[intChoice] == randomCorrectPropIllustration) { monster.makeRightChoice(Choice.RIGHT); }
+        if (OrderedAnswerProps[intChoice] == randomCorrectPropIllustration && leftCorrect)    {  monster.makeRightChoice(Choice.LEFT); }
+        else if (OrderedAnswerProps[intChoice] == randomCorrectPropIllustration)              { monster.makeRightChoice(Choice.RIGHT); }
         else if (leftCorrect && OrderedAnswerProps[intChoice] == randomFalsePropIllustration) { monster.makeWrongChoice(Choice.RIGHT); }
         else if(OrderedAnswerProps[intChoice] == randomFalsePropIllustration) { monster.makeWrongChoice(Choice.LEFT); }
         else { return; }
-        Ireciever.gameObject.SetActive(false);
 
+        Ireciever.gameObject.SetActive(false);
         questionTextBox.SetActive(false);
         LeftPlatformsAnswerTxts[currentQuestionNum - 1].gameObject.transform.parent.gameObject.SetActive(false);
         RightPlatformsAnswerTxts[currentQuestionNum - 1].gameObject.transform.parent.gameObject.SetActive(false);
