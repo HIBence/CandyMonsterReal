@@ -25,8 +25,16 @@ public class RiverGameManager : MonoBehaviour
     private InputReciever Ireciever;
     [SerializeField]
     private List<Sprite> AnswerPropsIllustrations;
+    [SerializeField]
+    SceneControl sceneController;
+
+
+
+
     private List<Sprite> OrderedAnswerProps = new List<Sprite>();
     private List<Sprite> UsedAnswerPropsIllustrations = new List<Sprite>();
+    [SerializeField] private List<AudioSource> riverGameVoiceLines = new List<AudioSource>();
+
 
 
     private List<Question> questions = new List<Question>();
@@ -39,6 +47,7 @@ public class RiverGameManager : MonoBehaviour
 
     void Start()
     {
+        StartCoroutine(SayTutorialVoiceLine());
         Ireciever.gameObject.SetActive(false);
         if(totalNumOfQuestions == 0)
         {
@@ -64,7 +73,10 @@ public class RiverGameManager : MonoBehaviour
         monster.updateRiverGameMethods();
         if(monster.reachedEndOfRiver())
         {
-
+            //complete voice line play
+            riverGameVoiceLines[1].Play();
+            sceneController.proceedToStartArea2();
+            
         } 
     }
     private void ShowQuestion()
@@ -195,6 +207,11 @@ public class RiverGameManager : MonoBehaviour
         ScanLock = true;
         yield return new WaitForSeconds(5.0f);
         ScanLock = false;
+    }
+    IEnumerator SayTutorialVoiceLine()
+    {
+        yield return new WaitForSeconds(2.0f);
+        riverGameVoiceLines[0].Play();
     }
 }
 

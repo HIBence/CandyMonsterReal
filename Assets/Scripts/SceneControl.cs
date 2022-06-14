@@ -7,6 +7,7 @@ public class SceneControl : MonoBehaviour
 {
     [SerializeField] RiverGameManager riverManager;
     [SerializeField] StartingArea1 startAreaManager;
+    [SerializeField] StartArea2 startArea2;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,5 +33,11 @@ public class SceneControl : MonoBehaviour
     {
         startAreaManager.gameObject.SetActive(false);
         riverManager.gameObject.SetActive(true);
+    }
+
+    public void proceedToStartArea2()
+    {
+        riverManager.gameObject.SetActive(false);
+        startArea2.gameObject.SetActive(true);
     }
 }

@@ -17,6 +17,9 @@ public class MonsterMovement : MonoBehaviour
     [SerializeField]
     private GameObject monsterSpeechBubble;
 
+    [SerializeField] private List<AudioSource> CorrectAnswerVoices = new List<AudioSource>();
+    [SerializeField] private List<AudioSource> WrongAnswerVoices = new List<AudioSource>();
+
     private GameObject chosenPlatform;
 
     public UnityEvent reachedQuestiontile = new UnityEvent();
@@ -205,12 +208,15 @@ public class MonsterMovement : MonoBehaviour
         if (correct)
         {
             Debug.Log("doing correct");
+
+            CorrectAnswerVoices[Random.Range(0, CorrectAnswerVoices.Count)].Play();
             yield return DoCelebration();
             
             GoToNextQuestion();
         }
         else
         {
+            WrongAnswerVoices[Random.Range(0, WrongAnswerVoices.Count)].Play();
             Debug.Log("doing incorrect");
             //do fall in water and jump out
             //ReegieAnimator.SetBool();

@@ -13,6 +13,7 @@ public class StartingArea1 : MonoBehaviour
     [SerializeField] MonsterMovement Monster;
     [SerializeField] SceneControl sceneController;
     [SerializeField] GameObject CS1Timeline;
+    [SerializeField] private List<AudioSource> Cutscene1VoiceLines = new List<AudioSource>();
 
     private List<Transform> targets = new List<Transform>();
     private int numOfDestinationsHit = 0;
@@ -77,7 +78,12 @@ public class StartingArea1 : MonoBehaviour
         //do animation
 
         yield return new WaitForSeconds(23.0f);
-        if(!proceeding)Monster.GoToRandomDestination(targets);
+        Cutscene1VoiceLines[3].Play();
+        if (!proceeding) {
+            Monster.GoToRandomDestination(targets);
+        }
+
+       
         
     }
     IEnumerator RandomInteraction()
@@ -91,9 +97,28 @@ public class StartingArea1 : MonoBehaviour
     
     IEnumerator PlayCutscene()
     {
-        //do cutscene
+        //enable timeline for camera movements
 
-        yield return new WaitForSeconds(3.0f);
+        Cutscene1VoiceLines[0].Play();
+        //do river camera movement
+        yield return new WaitForSeconds(4.0f);
+
+        Cutscene1VoiceLines[1].Play();
+        //move camera to dinokill
+        yield return new WaitForSeconds(8.0f);
+        
+        Cutscene1VoiceLines[2].Play();
+        //move camera back to reegie
+        yield return new WaitForSeconds(8.0f);
+
+        Cutscene1VoiceLines[4].Play();
+        //move camera back to reegie
+        yield return new WaitForSeconds(6.0f);
+
+
+
+
+
         cutscene1music.Stop();
         RiverGameMusic.Play();
         sceneController.proceedToRiver();
