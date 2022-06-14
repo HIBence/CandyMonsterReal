@@ -274,7 +274,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7685442810495351761, guid: be664c93145044344a7a543482cc30d7, type: 3}
       propertyPath: m_text
-      value: River Spelling
+      value: Play
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be664c93145044344a7a543482cc30d7, type: 3}
@@ -376,6 +376,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   riverManager: {fileID: 0}
   startAreaManager: {fileID: 0}
+  startArea2: {fileID: 0}
 --- !u!4 &621313281
 Transform:
   m_ObjectHideFlags: 0
@@ -1001,11 +1002,39 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2907481999052126701, guid: be664c93145044344a7a543482cc30d7, type: 3}
       propertyPath: m_Name
-      value: MAthBtn
+      value: QuitBtn
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 621313280}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Quit
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SceneControl, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4782610158449265399, guid: be664c93145044344a7a543482cc30d7, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 7685442810495351761, guid: be664c93145044344a7a543482cc30d7, type: 3}
       propertyPath: m_text
-      value: Mystic math
+      value: Quit
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be664c93145044344a7a543482cc30d7, type: 3}

@@ -24,6 +24,10 @@ public class SceneControl : MonoBehaviour
     {
         SceneManager.LoadScene("MYDemo");
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
     public void LoadMainMenu()
     {
         SceneManager.LoadScene("MainMenu");

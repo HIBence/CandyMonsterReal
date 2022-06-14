@@ -16,26 +16,27 @@ public class MonsterMovement : MonoBehaviour
     private GameObject[] rightPlatforms;
     [SerializeField]
     private GameObject monsterSpeechBubble;
-
-    [SerializeField] private List<AudioSource> CorrectAnswerVoices = new List<AudioSource>();
-    [SerializeField] private List<AudioSource> WrongAnswerVoices = new List<AudioSource>();
+    [SerializeField] 
+    private List<AudioSource> CorrectAnswerVoices = new List<AudioSource>();
+    [SerializeField] 
+    private List<AudioSource> WrongAnswerVoices = new List<AudioSource>();
+    [SerializeField]
+    ReegieModelMover floater;
 
     private GameObject chosenPlatform;
-
-    public UnityEvent reachedQuestiontile = new UnityEvent();
-    public UnityEvent reachedDestination = new UnityEvent();
-
-    private bool makingRightChoice;
-    private Vector3 currentTarget;
-
+    private Animator ReegieAnimator;
     private NavMeshAgent Monster;
+    private Vector3 currentTarget;
+    private int counter = 0;
+    private bool makingRightChoice;
+    private bool waiting = false;
+    private bool Reverting = false;
+    
 
     public int currentQuestionNum;
-
-    private int counter = 0;
-    private bool waiting = false;
-
-    private Animator ReegieAnimator;
+    public UnityEvent reachedQuestiontile = new UnityEvent();
+    public UnityEvent reachedDestination = new UnityEvent();
+    
 
 
 
@@ -158,6 +159,10 @@ public class MonsterMovement : MonoBehaviour
             }
 
         }
+        if (Reverting && Monster.gameObject.transform.GetChild(0).transform.position.y >= 0.0f)
+        {
+            stopReverting();
+        }
     }
     public void makeRightChoice(Choice platformToGo)
     {
@@ -221,7 +226,8 @@ public class MonsterMovement : MonoBehaviour
             //do fall in water and jump out
             //ReegieAnimator.SetBool();
             yield return FallInWater();
-            StartCoroutine(revertFellInWater());
+            revertFellInWater();
+            yield return new WaitForSeconds(0.5f);
             GoToNextQuestion();
         }
     }
@@ -244,27 +250,46 @@ public class MonsterMovement : MonoBehaviour
         chosenPlatform.gameObject.GetComponent<Rigidbody>().useGravity = true;
         ReegieAnimator.SetBool("Falling", true);
         Debug.Log("falling");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
         ReegieAnimator.SetBool("Falling", false);
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().useGravity = false;
         Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
         Debug.Log("GravityReset");
     }
 
-    IEnumerator revertFellInWater()
-    {
-        Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = true;
-        ReegieAnimator.SetBool("Jumping", true);
-        yield return new WaitForSeconds(1f);
-        ReegieAnimator.SetBool("Jumping", false);
-        Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = false;
-        Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
-        
-    }
-    
+    //IEnumerator revertFellInWater()
+    //{
+    //    //Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = true;
+    //    floater.FloatUp();
+    //    ReegieAnimator.SetBool("Jumping", true);
+    //    //Reverting = true;
+    //    yield return new WaitForSeconds(1.0f);
+    //    //Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = false;
+    //    //Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
+    //    //yield return new WaitForFixedUpdate();
+    //    //Monster.gameObject.transform.GetChild(0).transform.position.Set(0,0,0);
 
 
-    private void GoToNextQuestion()
+
+//}
+private void revertFellInWater()
+{
+    Reverting = true;
+    Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = true;
+    ReegieAnimator.SetBool("Jumping", true);
+}
+private void stopReverting()
+{
+    Reverting = false;
+    Monster.gameObject.transform.GetChild(0).GetComponent<ConstantForce>().enabled = false;
+    Monster.gameObject.transform.GetChild(0).GetComponent<Rigidbody>().velocity = Vector3.zero;
+    Monster.gameObject.transform.GetChild(0).transform.localPosition = Vector3.zero;
+    ReegieAnimator.SetBool("Jumping", false);
+}
+
+
+
+private void GoToNextQuestion()
     {
         monsterSpeechBubble.SetActive(false);
         Monster.SetDestination(QuestionPlatforms[currentQuestionNum].transform.position);
